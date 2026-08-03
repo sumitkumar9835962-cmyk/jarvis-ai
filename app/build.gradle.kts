@@ -39,6 +39,7 @@ android {
     }
   }
 
+
   buildTypes {
     release {
       isCrunchPngs = false
