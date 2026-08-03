@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>JARVIS - Mobile AI Assistant</title>
+    <!-- Fonts for Sci-Fi theme -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <div class="app-container">
+        <!-- Top Navigation Bar -->
+        <header class="app-header">
+            <div class="header-left">
+                <div class="status-indicator">
+                    <span class="pulse-ring"></span>
+                    <span class="status-dot"></span>
+                </div>
+                <div class="title-container">
+                    <h1>JARVIS SYSTEM</h1>
+                    <span id="status-text" class="status-label">ONLINE - STANDBY</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <button id="tts-toggle" class="header-btn" title="Toggle Voice Output">
+                    <span class="material-icons-round">volume_up</span>
+                </button>
+                <button id="clear-btn" class="header-btn" title="Clear Chat History">
+                    <span class="material-icons-round">delete_sweep</span>
+                </button>
+                <button id="settings-btn" class="header-btn" title="Settings">
+                    <span class="material-icons-round">settings</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Visualizer Area -->
+        <main class="main-content">
+            <div class="visualizer-container">
+                <div class="arc-reactor" id="arc-reactor-trigger">
+                    <div class="ring outer-ring"></div>
+                    <div class="ring middle-ring"></div>
+                    <div class="ring inner-ring"></div>
+                    <div class="core-glow"></div>
+                    <div class="core-logo">
+                        <span class="material-icons-round">insights</span>
+                    </div>
+                </div>
+                <div class="status-message" id="status-feedback">TAP CORE OR MIC TO SPEAK</div>
+            </div>
+
+            <!-- Quick Action Preset Chips -->
+            <div class="preset-chips-container">
+                <button class="preset-chip" data-cmd="Hello Jarvis">Hello Jarvis</button>
+                <button class="preset-chip" data-cmd="What is your current status?">System Status</button>
+                <button class="preset-chip" data-cmd="Tell me a joke.">Tell a Joke</button>
+                <button class="preset-chip" data-cmd="Explain quantum computing in one sentence.">Quantum Physics</button>
+            </div>
+
+            <!-- Conversation Chat History -->
+            <div class="chat-console" id="chat-console">
+                <!-- Chat messages will be loaded dynamically -->
+                <div class="system-message">
+                    <span class="timestamp">SYS INITIALIZED</span>
+                    <p>Secure connection established. Welcome back, Boss. Command me at your pleasure.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Input Dock -->
+        <footer class="input-dock">
+            <div class="input-bar-container">
+                <button id="mic-btn" class="mic-button" title="Voice Command">
+                    <span class="material-icons-round">mic</span>
+                </button>
+                <div class="input-field-wrapper">
+                    <input type="text" id="chat-input" placeholder="Command Jarvis, Boss..." autocomplete="off">
+                    <div class="typing-indicator" id="typing-indicator">
+                        <span></span><span></span><span></span>
+                    </div>
+                </div>
+                <button id="send-btn" class="send-button" title="Send Command">
+                    <span class="material-icons-round">send</span>
+                </button>
+            </div>
+        </footer>
+
+        <!-- Settings Modal/Overlay -->
+        <div id="settings-modal" class="modal-overlay">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>SYSTEM CONFIGURATION</h2>
+                    <button id="close-settings" class="close-btn">
+                        <span class="material-icons-round">close</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="config-group">
+                        <label for="api-key-input">Gemini API Key</label>
+                        <div class="input-with-toggle">
+                            <input type="password" id="api-key-input" placeholder="Enter Gemini API Key...">
+                            <button id="toggle-key-visibility" class="toggle-visibility-btn">
+                                <span class="material-icons-round">visibility</span>
+                            </button>
+                        </div>
+                        <p class="config-hint">Your API key is saved safely in local storage and never leaves your device.</p>
+                    </div>
+                    <div class="config-group">
+                        <label for="voice-selector">Voice Configuration</label>
+                        <select id="voice-selector">
+                            <option value="default">Default System Voice</option>
+                        </select>
+                    </div>
+                    <div class="config-group checkbox-group">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="auto-scroll-toggle" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <span class="label-text">Auto-scroll chat logs</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="save-settings-btn" class="primary-btn">APPLY CONFIG</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script file -->
+    <script src="app.js"></script>
+</body>
+</html>
