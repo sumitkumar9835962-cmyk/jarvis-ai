@@ -1,0 +1,6 @@
+{
+  "name": "Jarvis AI",
+  "description": "Voice and system AI assistant for Boss. Handles commands, YouTube, WhatsApp, Flashlight, Camera, Music, and App launching.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
