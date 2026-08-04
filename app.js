@@ -56,7 +56,7 @@ function initSpeechRecognition() {
 
     recognition = new SpeechRecognition();
     recognition.continuous = false;
-    recognition.lang = 'en-US';
+    recognition.lang = 'hi-IN';
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
 
