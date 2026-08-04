@@ -390,9 +390,9 @@ async function processCommand(query) {
         STATE.isProcessing = false;
         updateArcReactorUI();
 
-        const fallbackReply = "Deepest apologies Boss, my cloud uplink experienced a fluctuation. What can I do for you?";
-        appendMessage('jarvis', fallbackReply);
-        speak(fallbackReply);
+   
+        
+        const fallbackReply = "माफ़ कीजिए बॉस, अभी सर्वर से कनेक्शन नहीं हो पाया। कृपया दोबारा कोशिश करें। मैं आपकी क्या मदद कर सकता हूँ?";
     }
 }
 
